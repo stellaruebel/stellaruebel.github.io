@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f5f7f3" />
+  <title>SMARTINCIRCLES · Materiales circulares</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="main-visual.css" />
+  <link rel="stylesheet" href="kit-card.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="wordmark" href="#inicio" aria-label="SMARTINCIRCLES inicio"><span>SMARTINCIRCLES</span></a>
+      <div class="top-context"><span class="status-dot"></span> MAPA DE MATERIALES CIRCULARES</div>
+      <button class="top-action" id="homeButton" type="button" hidden>⌂ <span>Todos los círculos</span></button>
+    </header>
+
+    <main>
+      <section class="view home-view is-active" id="homeView" aria-labelledby="mainTitle">
+        <div class="definition-circles">
+          <button class="definition-circle" id="definitionCircle" type="button" aria-expanded="false">
+            <span class="definition-heading">¿Qué es el biodiseño?</span>
+            <span class="definition-prompt">VER DEFINICIÓN <i>＋</i></span>
+            <span class="definition-copy">El biodiseño es una disciplina que utiliza sistemas naturales para crear productos regenerativos.</span>
+          </button>
+          <button class="definition-circle biomaterials-circle" id="biomaterialsCircle" type="button" aria-expanded="false">
+            <span class="definition-heading">¿Qué son los biomateriales?</span>
+            <span class="definition-prompt">VER DEFINICIÓN <i>＋</i></span>
+            <span class="definition-copy">Los biomateriales son materiales derivados de fuentes orgánicas. Pueden estar hechos a partir de organismos vivos o de residuos de origen orgánico.</span>
+          </button>
+        </div>
+        <div class="hero-copy"><div class="overline"><span>UN LABORATORIO DE POSIBILIDADES</span><i></i><span>4 SISTEMAS</span></div><h1 id="mainTitle">Los residuos tienen<br />una nueva vida</h1><p>Explora cuatro materiales circulares, desde su origen hasta todo lo que pueden llegar a ser.</p></div>
+        <div class="orbit-stage" id="orbitStage" aria-label="Elige un sistema de biomateriales">
+          <svg class="orbit-lines" viewBox="0 0 1000 600" aria-hidden="true"><ellipse cx="500" cy="300" rx="364" ry="223" /><ellipse class="orbit-dash" cx="500" cy="300" rx="286" ry="175" /></svg>
+          <div class="orbit-glow"></div>
+          <div class="topic-circles" id="topicCircles"></div>
+          <div class="orbit-note"><span class="note-spark">✳</span> Elige un círculo para explorar su proceso</div>
+        </div>
+        <section class="kit-section" aria-label="Kit de Biomateriales">
+          <article class="kit-card">
+            <button class="kit-toggle" type="button" aria-expanded="false" aria-controls="kitDetails">
+              <span class="kit-art" role="img" aria-label="Ilustración de un kit cilíndrico de biomateriales"><span class="kit-can"><span class="kit-can-lid"></span><span class="kit-can-body"><span class="kit-can-label">SMART<br />BIOKIT</span><i></i></span><span class="kit-can-base"></span></span><span class="kit-can-shadow"></span></span>
+              <span class="kit-copy"><span class="kit-eyebrow">RECURSO</span><strong>Kit de Biomateriales</strong><span class="kit-prompt">Haz clic para ver más información</span></span>
+              <span class="kit-expand-mark" aria-hidden="true">＋</span>
+            </button>
+            <div class="kit-details" id="kitDetails" hidden>
+              <p class="kit-description"><strong>Descripción:</strong> Con este Kit de Biomateriales podrás crear tu propio biomaterial paso a paso.</p>
+              <div class="kit-info-grid">
+                <div><span>EL KIT INCLUYE:</span><ul><li>Instrucciones de uso</li><li>Polvo de cáscaras de naranja, guisantes o granada</li><li>Glicerina</li><li>Gelatina</li></ul></div>
+                <div><span>¿QUÉ NECESITAS EN CASA?</span><ul><li>Una sartén y cocina (o estufa)</li><li>Cucharas para mezclar</li></ul></div>
+              </div>
+            </div>
+          </article>
+        </section>
+        <div class="home-bottom"><span><i class="bottom-dot"></i> DISEÑO INSPIRADO EN LOS CICLOS DE LA NATURALEZA</span><span>01 — 04</span></div>
+      </section>
+
+      <section class="view process-view" id="processView" aria-labelledby="processTitle" hidden>
+        <div class="process-heading">
+          <button class="back-button" id="backButton" type="button"><span>←</span> Todos los círculos</button>
+          <div class="process-kicker" id="processKicker"></div>
+          <h1 id="processTitle"></h1>
+          <p id="processSubtitle">Un ciclo de transformación, de la materia prima al objeto.</p>
+        </div>
+        <div class="process-frame" id="processFrame">
+          <div class="process-grid"></div>
+          <div class="process-stage" id="processStage">
+            <svg class="process-arrows" id="processArrows" aria-hidden="true"></svg>
+            <div class="process-nodes" id="processNodes"></div>
+          </div>
+          <div class="process-tip"><span>✳</span> Haz clic en cada círculo para leer el texto</div>
+        </div>
+        <div class="process-bottom"><span><i class="bottom-dot"></i> MATERIA · TRANSFORMACIÓN · NUEVOS USOS</span><button id="nextCircle" type="button">Siguiente sistema <span>→</span></button></div>
+      </section>
+    </main>
+    <footer class="site-footer"><span>SMARTINCIRCLES</span><span>Materiales circulares · exploración interactiva</span></footer>
+  </div>
+  <script src="main-visual.js"></script>
+</body>
+</html>
