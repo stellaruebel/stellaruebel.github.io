@@ -1,0 +1,231 @@
+/* Bioplásticos project cards */
+.process-frame.has-projects {
+  --project-offset: clamp(-6.5px, calc(25% - 317px), 34px);
+  display: grid;
+  grid-template-columns: minmax(190px, 230px) minmax(0, 1fr) minmax(190px, 230px);
+  gap: 15px;
+  padding: 18px;
+}
+
+.process-frame.has-projects .process-stage {
+  position: relative;
+  inset: auto;
+  grid-column: 2;
+  grid-row: 1;
+  min-width: 0;
+  min-height: 480px;
+  height: 100%;
+  z-index: 1;
+}
+
+.process-frame.has-projects .project-cards {
+  display: contents;
+}
+
+.process-frame.has-projects .project-card:first-child {
+  grid-column: 1;
+  grid-row: 1;
+  left: var(--project-offset);
+}
+
+.process-frame.has-projects .project-card:last-child {
+  grid-column: 3;
+  grid-row: 1;
+  right: calc(70px + var(--project-offset));
+}
+
+.project-card {
+  position: relative;
+  align-self: center;
+  width: 300px;
+  min-height: 260px;
+  border: 1px solid #ffffff70;
+  border-radius: 13px;
+  overflow: hidden;
+  background-color: #506353;
+  background-position: center;
+  background-size: cover;
+  box-shadow: 0 9px 24px #243b2d26;
+  color: #fff;
+  transition: min-height .24s, transform .2s, box-shadow .2s;
+  z-index: 3;
+}
+
+.project-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 13px 27px #243b2d30;
+}
+
+.project-toggle {
+  position: relative;
+  width: 100%;
+  min-height: 260px;
+  padding: 24px 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+  color: #fff;
+  background: none;
+  border: 0;
+  font-family: var(--font);
+  cursor: pointer;
+}
+
+.project-kicker {
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 1.1px;
+  opacity: .8;
+}
+
+.project-title {
+  font: 700 19px/1.2 var(--display);
+  letter-spacing: -.3px;
+  margin-top: 8px;
+}
+
+.project-subtitle {
+  font-size: 10px;
+  line-height: 1.45;
+  margin-top: 6px;
+  color: #ffffffd9;
+}
+
+.project-affordance {
+  position: absolute;
+  right: 16px;
+  top: 14px;
+  width: 24px;
+  height: 24px;
+  border: 1px solid #ffffff80;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 15px;
+}
+
+.project-details {
+  border-top: 1px solid #ffffff60;
+  padding: 0 18px 18px;
+  color: #fff;
+  font-size: 10px;
+  line-height: 1.55;
+  animation: fade-in .22s ease;
+}
+
+.project-details[hidden] {
+  display: none;
+}
+
+.project-details p {
+  margin: 11px 0 0;
+}
+
+.project-details strong {
+  display: block;
+  font-size: 7px;
+  letter-spacing: .9px;
+  text-transform: uppercase;
+  color: #ffffffc7;
+  margin-bottom: 2px;
+}
+
+.project-video {
+  display: inline-flex;
+  margin-top: 14px;
+  padding: 8px 11px;
+  border: 1px solid #ffffffa0;
+  border-radius: 6px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.project-video:hover {
+  background: #ffffff22;
+}
+
+.project-video.pending {
+  opacity: .75;
+  cursor: default;
+}
+
+.project-card.expanded {
+  min-height: 350px;
+}
+
+.project-card.expanded .project-toggle {
+  min-height: 145px;
+  padding-bottom: 14px;
+  justify-content: flex-end;
+}
+
+.project-card.expanded .project-title {
+  font-size: 17px;
+}
+
+.process-frame.has-projects .process-tip {
+  left: 263px;
+  right: 263px;
+  justify-content: center;
+}
+
+@media (min-width: 1360px) {
+  .process-frame.has-projects .project-card:first-child {
+    left: calc(var(--project-offset) + clamp(6px, calc(12.5vw - 163px), 24px));
+  }
+
+  .process-frame.has-projects .project-card:last-child {
+    right: calc(70px + var(--project-offset) + clamp(6px, calc(12.5vw - 163px), 24px));
+  }
+}
+
+@media (max-width: 1100px) {
+  .process-frame.has-projects {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .process-frame.has-projects .process-stage {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: 520px;
+    min-height: 480px;
+    order: 0;
+  }
+
+  .process-frame.has-projects .project-cards {
+    display: flex;
+    flex-direction: column;
+    order: 1;
+    gap: 12px;
+  }
+
+  .process-frame.has-projects .project-card {
+    width: 100%;
+    left: auto;
+    right: auto;
+    min-height: 210px;
+  }
+
+  .process-frame.has-projects .project-toggle {
+    min-height: 210px;
+  }
+
+  .process-frame.has-projects .project-card.expanded .project-toggle {
+    min-height: 130px;
+  }
+
+  .process-frame.has-projects .process-tip {
+    display: none;
+  }
+}

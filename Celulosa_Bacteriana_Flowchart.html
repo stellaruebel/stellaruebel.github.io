@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f4f5ef" />
+  <title>Flujo de biomateriales — Flowspace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="page">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Flowspace"><span class="brand-mark"><i></i><i></i><i></i></span><span>flowspace</span></a>
+      <span class="document-label"><span class="live-dot"></span> VISUALIZACIÓN DE DOCUMENTO</span>
+      <button class="help-button" id="resetView" title="Cerrar todos los elementos"><span>↺</span> Restablecer vista</button>
+    </header>
+
+    <section class="intro">
+      <div class="eyebrow"><span>MAPA DE MATERIALES</span><i></i><span>5 ELEMENTOS</span></div>
+      <h1>Del té a la materia<span class="title-mark">✳</span></h1>
+      <p>Una red de ingredientes, fermentación y materiales recuperados.</p>
+    </section>
+
+    <section class="legend-row" aria-label="Cómo leer el diagrama">
+      <div class="legend"><span class="legend-line"><i></i></span><span>El flujo continúa hacia la flecha</span></div>
+      <span class="legend-instruction"><span>↗</span> Selecciona un elemento para ver su texto</span>
+    </section>
+
+    <section class="diagram-frame" aria-label="Diagrama interactivo del proceso de biomateriales">
+      <div class="diagram-grid"></div>
+      <div class="diagram-viewport" id="diagramViewport">
+        <div class="diagram" id="diagram">
+          <img class="background-logo" src="assets/smartincircles-logo.png" alt="" aria-hidden="true" />
+          <svg class="connections" id="connections" aria-hidden="true"></svg>
+          <article class="item item-source item-enbruto" data-id="en-bruto" tabindex="0" role="button" aria-expanded="false" aria-label="En Bruto, ampliar texto"><div class="item-header"><span class="item-icon icon-source">✳</span><span class="item-kind">ORIGEN</span><span class="expand-mark">＋</span></div><h2>En Bruto</h2><p class="item-preview">Café, restaurante, bollería y fermentación.</p><div class="item-content"><div class="item-divider"></div><div class="detail-label">TEXTO</div><p>En Bruto es un café, restaurante, bollería, y lugar de fermentación. En su proceso de fermentación, hacen kombucha para vender pero después tienen cáscaras, SCOBY, que usamos para hacer biomateriales.</p><img class="item-image" src="en-bruto-fermakers-3.jpg" alt="Bottles of En Bruto kombucha" /></div><span class="node-foot"><i></i> Punto de partida</span></article>
+
+          <article class="item item-source item-te" data-id="tienda" tabindex="0" role="button" aria-expanded="false" aria-label="Tienda de Té, ampliar texto"><div class="item-header"><span class="item-icon icon-te">◉</span><span class="item-kind">ORIGEN</span><span class="expand-mark">＋</span></div><h2>Tienda de Té</h2><p class="item-preview">Té verde usado de Wagashi Utatane.</p><div class="item-content"><div class="item-divider"></div><div class="detail-label">TEXTO</div><p>Wagashi Utatane es una tienda de té ubicada en el barrio Chamberí. Venden dulces y té Japoneses. Nos da té verde usado con el cual usamos para hacer la kombucha.</p></div><span class="node-foot"><i></i> Punto de partida</span></article>
+
+          <article class="item item-process item-kombucha" data-id="kombucha" tabindex="0" role="button" aria-expanded="false" aria-label="Kombucha, ampliar texto"><div class="item-header"><span class="item-icon icon-kombucha">◌</span><span class="item-kind">FERMENTACIÓN</span><span class="expand-mark">＋</span></div><h2>Kombucha</h2><p class="item-preview">Té y azúcar fermentados por microorganismos.</p><div class="item-content"><div class="item-divider"></div><div class="detail-label">TEXTO</div><p>La kombucha es un líquido fermentado. Mezclamos un líquido que tiene bacteria y levadura con azúcar, te, y agua. Los microorganismos fermentan el té y azúcar creando en el proceso, celulosa bacteriana.</p></div><span class="node-foot"><i></i> Proceso vivo</span></article>
+
+          <article class="item item-material item-cellulose" data-id="celulosa" tabindex="0" role="button" aria-expanded="false" aria-label="Celulosa Bacteriana, ampliar texto"><div class="item-header"><span class="item-icon icon-cellulose">✧</span><span class="item-kind">BIOMATERIAL</span><span class="expand-mark">＋</span></div><h2>Celulosa<br class="title-break" /> Bacteriana</h2><p class="item-preview">Una lámina transformable al secarse.</p><div class="item-content"><div class="item-divider"></div><div class="detail-label">TEXTO</div><p>La celulosa bacteriana en un material liso y deslizado antes de secar. Después de secarlo, dependiendo del método, toma forma de un papel o muestra de cuero.</p><img class="cellulose-image" src="IMG_7036.jpeg" alt="Close-up photograph of bacterial cellulose material" /></div><span class="node-foot"><i></i> Material recuperado</span></article>
+
+          <article class="item item-finish item-lamp" data-id="lampara" tabindex="0" role="button" aria-expanded="false" aria-label="Lampara, ampliar texto"><div class="item-header"><span class="item-icon icon-lamp">⌁</span><span class="item-kind">OBJETO FINAL</span><span class="expand-mark">＋</span></div><h2>Lampara</h2><p class="item-preview">Una aplicación final de la celulosa.</p><div class="item-content"><div class="item-divider"></div><div class="detail-label">TEXTO</div><p>La lámpara esta hecho con muestras de celulosa bacteriana.</p></div><span class="node-foot"><i></i> Resultado</span></article>
+        </div>
+      </div>
+      <div class="canvas-caption"><span class="caption-icon">✳</span><span>Un flujo circular de residuos convertidos en recursos.</span><span class="caption-count">5 elementos <i></i> 4 conexiones</span></div>
+    </section>
+
+    <footer class="page-footer"><span><i></i> Basado en “Content for Visulization”</span><span>Los elementos se expanden al seleccionarlos</span></footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
